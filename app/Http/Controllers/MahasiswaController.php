@@ -32,12 +32,12 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        /*$request->validate([
+        $request->validate([
             'nama' => 'required',
             'nim' => 'required|unique:mahasiswa',
             'jurusan' => 'required',
             'alamat' => 'required'
-        ]);*/
+        ]);
 
         $mahasiswa = new Mahasiswa;
         $mahasiswa->nama = $request->nama;
@@ -92,8 +92,11 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id_mahasiswa)
     {
-        //
+        $mahasiswa = Mahasiswa::findOrFail($id_mahasiswa);
+        $mahasiswa->delete();
+
+        return redirect()->route('index')->with('success', 'Berhasil dihapus');
     }
 }

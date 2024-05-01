@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama', 50);
             $table->date('tanggal_lahir');
             $table->string('no_hp', 20)->nullable();
-            //$table->timestamps(); karena gadipake ethp1
+            //$table->timestamps(); //karena gadipake ethp1
         });
     }
 

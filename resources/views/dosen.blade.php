@@ -26,7 +26,8 @@
                 <td>{{$dsn -> jekel}}</td>
                 <td>{{$dsn -> prodi}}</td>
                 <td>{{$dsn -> jabatan}}</td>
-                <td>{{$dsn -> nip->no_identitas}}</td>
+                <td>{{optional($dsn -> nip)->no_identitas}}</td>
+
                 <td>
                     <button type="button" class="btn btn-primary">Update</button>
                     <button type="button" class="btn btn-danger">Hapus</button>

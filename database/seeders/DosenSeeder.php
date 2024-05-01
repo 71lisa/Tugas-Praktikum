@@ -13,14 +13,14 @@ class DosenSeeder extends Seeder
      */
     public function run(): void
     {
-        Dosen::create([
+        /*Dosen::create([
             'id_dosen' => '', 
             'nama_dosen' => 'Ara Syah S.Sos',
             'jekel' => 'Perempuan',
             'prodi' => 'Kesejahteraan Sosial',
             'jabatan' => 'Asisten Dosen'
-        ]);
+        ]);*/
 
-        //Staff::factory(8)->create();
+        Staff::factory(1)->create();
     }
 }

@@ -15,14 +15,16 @@ class DosenFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    protected $model = Dosen::class;
     public function definition(): array
     {
-        /*return [
-            'id_dosen' => $this->faker->text(),
+        return [
             'nama_dosen' => $this->faker->name(),
-            'jekel' => $this->faker->word(),
-            'prodi' => $this->faker->word(),
-            'jabatan' => $this->faker->word()
-        ];*/
+            'jekel' => $this->faker->randomElement(['Laki-laki', 'Perempuan']),
+            'prodi' => $this->faker->randomElement(['Perpajakan', 'Pendidikan Dokter', 'Teknik Lingkungan', 'Matematika', 'Keperawatan', 'Hubungan Internasional', 'Statistika', 'Farmasi']),
+            'jabatan' => $this->faker->randomElement(['Lektor Kepala', 'Guru Besar', 'Asisten Ahli', 'Tenaga Pengajar']),
+            'nip' => $this->faker->numerify('#######')
+        ];
     }
 }
